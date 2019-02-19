@@ -1,0 +1,6 @@
+#!/bin/bash
+read -p 'Text to write: ' text
+text=${text// /\\ }
+#add backslash to spaces
+adb shell input text "$text"
+
