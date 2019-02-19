@@ -1,0 +1,37 @@
+#!/bin/bash
+
+left() {
+  echo "left"
+  adb shell input keyevent 21
+}
+
+up() {
+  echo "up"
+  adb shell input keyevent 19
+}
+
+right() {
+  echo "right"
+  adb shell input keyevent 22
+}
+
+down() {
+  echo "down"
+  adb shell input keyevent 20
+}
+
+enter() {
+  echo "enter"
+  adb shell input keyevent 66
+}
+
+echo "use awsd to control directions, use 'e' to simulate enter key"
+while read -n 1 key; do
+    case "$key" in
+        'a') left ;;
+        'w') up ;;
+        's') down ;;
+        'd') right ;;
+        'e') enter ;;
+    esac
+done
